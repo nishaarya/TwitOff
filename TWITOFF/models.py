@@ -8,10 +8,10 @@ DB = SQLAlchemy()
 
 #Twitter users that we pull and analyse
 class User(DB.Model):
-    id  = DB.Column(DB.Interger, primary_key=True)
+    id  = DB.Column(DB.BigInteger, primary_key=True)
     name = DB.Column(DB.String(15), nullable=False)
 
 #Tweets
 class Tweet(DB.Model):
-    id = DB.Column(DB.Interget, primary_key=True)
+    id = DB.Column(DB.BigInteger, primary_key=True)
     name = DB.Column(DB.Unicode(280))

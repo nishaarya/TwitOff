@@ -1,14 +1,20 @@
-#import flask package
-#flask makes app objects
-from flask import Flask
+"""Minimal flask app"""
 
-#creat Flask web server
-#This makes the application
+from flask import Flask, render_template
+
+#Make the application
 app = Flask(__name__)
 
-#routes determine the location
-@app.route('/')
+#Make the route
+@app.route("/")
 
-#define a simple function
+#Now define a function
 def hello():
-    print('Hello World!')
+    return render_template('home.html')
+
+#Make a second route
+@app.route("/about")
+
+#Now make the function that goes with about
+def preds():
+    return render_template('about.html')
