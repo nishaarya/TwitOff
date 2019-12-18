@@ -14,4 +14,7 @@ class User(DB.Model):
 #Tweets
 class Tweet(DB.Model):
     id = DB.Column(DB.BigInteger, primary_key=True)
-    name = DB.Column(DB.Unicode(280))
+    name = DB.Column(DB.Unicode(300))
+    #the below 2 rows are going to allow us to connect user.id to tweets
+    user_id = DB.Column(DB.BigInteger, DB.ForeignKey('user.id'), nullable=False)
+    user = DB.relationship('User', backref=DB.backref('tweets'), lazy=True)
